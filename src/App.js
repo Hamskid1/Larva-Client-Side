@@ -1,13 +1,13 @@
 import React from 'react'
 import "./App.css"
-// import LoginPage from "./Conponents/Pages/LoginPage.jsx"
+import LoginPage from "./Conponents/Pages/LoginPage.jsx"
 
 
 
 function App() {
   return (
     <div>
-      {/* <LoginPage /> */}
+      <LoginPage />
     </div>
   )
 }
