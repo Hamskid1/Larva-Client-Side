@@ -1,13 +1,18 @@
 import React from 'react'
 import "./App.css"
-import LoginPage from "./Conponents/Pages/LoginPage.jsx"
+import HomePage from './Conponents/Pages/HomePage.jsx'
+// import LoginPage from "./Conponents/Pages/LoginPage.jsx"
+
+
+
 
 
 
 function App() {
   return (
     <div>
-      <LoginPage />
+      {/* <LoginPage /> */}
+      <HomePage/>
     </div>
   )
 }

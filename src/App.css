@@ -1,4 +1,10 @@
 /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .login-page {
   display: flex;
   flex-direction: row;
@@ -87,6 +93,164 @@ input:focus {
   object-fit: cover; 
 }
 
+/* General Styles for the Aside Component */
+
+.aside {
+  position: relative;
+}
+
+
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  width: 30px;
+  height:20px;
+  padding: auto;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.hamburger div {
+  width: 100%;
+  height: 4px;
+  background-color:RGB(30 18 6);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animation for Hamburger when open */
+.hamburger.open div:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open div:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width:20%;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  padding: 20px 17px;
+  transition: transform 0.3s ease;
+  /* z-index: 9; */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Logo */
+.sidebar-logo {
+  width: 150px;
+  margin-bottom: 40px;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav p {
+  margin: 20px 0;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sidebar-nav p:hover {
+  color: #007bff;
+}
+
+/* Sidebar Logout */
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebar-logout img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.sidebar-logout h4 {
+  font-size: 16px;
+  color: #333;
+}
+
+.sidebar .profile-container{
+  display: none;
+}
+
+
+
+/* General Styles for nav */
+
+.Navbars {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 20%;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.navbar-logo{ 
+  display: none;
+}
+
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info {
+  margin-right: 10px;
+  text-align: right;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .login-page {
@@ -114,6 +278,79 @@ input:focus {
   .button {
     font-size: 14px;
   }
+
+  /* aside */
+  .hamburger {
+    display: flex; 
+  }
+
+  .sidebar .profile-container{
+    display: flex;
+    text-align: right;
+    margin-top: 30px;
+  }
+
+  .sidebar {
+    transform: translateX(-100%); 
+    left: 0; 
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+    width: 100vw;
+  }
+
+  .sidebar-logo {
+    display: none;
+  }
+
+  /* navbar */
+
+  .Navbars{
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .navbar-container {
+    flex-direction: row;
+    align-items: flex-start;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+  }
+  .navbar-logo{ 
+    display: block;
+    width: 100px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+
+  .navbar {
+    width: 100%;
+    padding-top: 10px;
+    order: 2;
+    display: none;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .profile-info {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .profile-img {
+    width: 35px;
+    height: 35px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -121,6 +358,28 @@ input:focus {
     padding: 10px;
     width: 100%; 
   }
+  .hamburger {
+    width: 25px;
+    height: 18px;
+  }
 
-  
+  .hamburger div {
+    height: 3px;
+  }
+
+  .sidebar {
+    width: 180px;
+  }
+
+  .sidebar-logo {
+    width: 100px;
+  }
+
+  .sidebar-nav p {
+    font-size: 14px;
+  }
+
+  .sidebar-logout h4 {
+    font-size: 12px;
+  }
 }
