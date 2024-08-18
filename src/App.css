@@ -5,10 +5,14 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+}
+
 .login-page {
   display: flex;
   flex-direction: row;
-  align-items: stretch; 
+  align-items: stretch;
   justify-content: center;
   min-height: 100vh;
   background-color: #fff;
@@ -17,14 +21,14 @@
 }
 
 .input-sections {
-  background-color:#fff;
+  background-color: #fff;
   padding: 40px;
   border-radius: 10px;
   /* box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); */
   text-align: center;
   max-width: 400px;
   width: 100%;
-  z-index: 1; 
+  z-index: 1;
   margin: auto 20px;
 }
 
@@ -90,13 +94,14 @@ input:focus {
   height: 100vh;
   margin-right: -7%;
   margin-left: 5%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 /* General Styles for the Aside Component */
 
 .aside {
   position: relative;
+  z-index: 2000;
 }
 
 
@@ -104,7 +109,7 @@ input:focus {
 .hamburger {
   cursor: pointer;
   width: 30px;
-  height:20px;
+  height: 20px;
   padding: auto;
   display: none;
   flex-direction: column;
@@ -112,13 +117,13 @@ input:focus {
   z-index: 10;
   position: absolute;
   top: 20px;
-  right: 10px;
+  right: 30px;
 }
 
 .hamburger div {
   width: 100%;
   height: 4px;
-  background-color:RGB(30 18 6);
+  background-color: RGB(30 18 6);
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -138,12 +143,12 @@ input:focus {
 
 /* Sidebar Styling */
 .sidebar {
-  width:20%;
+  width: 20%;
   height: 100vh;
   background-color: #fff;
   position: fixed;
   top: 0;
-  left: 0; 
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -189,7 +194,7 @@ input:focus {
   color: #333;
 }
 
-.sidebar .profile-container{
+.sidebar .profile-container {
   display: none;
 }
 
@@ -211,7 +216,8 @@ input:focus {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-.navbar-logo{ 
+
+.navbar-logo {
   display: none;
 }
 
@@ -251,20 +257,157 @@ input:focus {
   border-radius: 50%;
 }
 
+/* Container Styling */
+.attendance-container {
+  padding: 20px;
+}
+
+/* Header Styling */
+.attendance-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Title Styling */
+.attendance-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Controls Wrapper Styling */
+.attendance-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Form Styling */
+.attendance-form {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  max-width: 900px;
+  flex-grow: 1;
+}
+
+/* Input Field Styling */
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: transparent;
+  margin: 0 10px;
+}
+
+/* Icon Styling */
+.search-icon,
+.network-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Dropdown Group */
+/* .dropdown-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 20px;
+  max-width: 100%;
+  margin: 20px auto;
+} */
+
+.dropdown-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 100%;
+  margin: 20px auto;
+}
+
+
+/* Dropdown Container */
+.dropdown-container {
+  position: relative;
+}
+
+/* Dropdown Header */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Selected Option Text */
+.dropdown-header span {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Icon Styling */
+.dropdown-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Arrow Rotation */
+.dropdown-arrow.open .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* Dropdown List */
+.dropdown-list {
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown List Item */
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .login-page {
-      align-items: center;
+    align-items: center;
   }
 
   .input-sections {
     padding: 10px;
     margin: 0;
-    width: 90%; 
+    width: 90%;
   }
 
-  .login-bk { 
-      display:none;
+  .login-bk {
+    display: none;
   }
 
   h1 {
@@ -281,18 +424,18 @@ input:focus {
 
   /* aside */
   .hamburger {
-    display: flex; 
+    display: flex;
   }
 
-  .sidebar .profile-container{
+  .sidebar .profile-container {
     display: flex;
     text-align: right;
     margin-top: 30px;
   }
 
   .sidebar {
-    transform: translateX(-100%); 
-    left: 0; 
+    transform: translateX(-100%);
+    left: 0;
   }
 
   .sidebar.show {
@@ -306,7 +449,7 @@ input:focus {
 
   /* navbar */
 
-  .Navbars{
+  .Navbars {
     margin-left: 0;
     width: 100%;
   }
@@ -319,7 +462,8 @@ input:focus {
     align-items: center;
 
   }
-  .navbar-logo{ 
+
+  .navbar-logo {
     display: block;
     width: 100px;
     margin-bottom: 40px;
@@ -351,13 +495,60 @@ input:focus {
     width: 35px;
     height: 35px;
   }
+
+  .attendance-title {
+    font-size: 20px;
+  }
+
+  .attendance-controls {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .attendance-form {
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .search-input {
+    font-size: 14px;
+  }
+
+  .search-icon,
+  .network-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dropdown-group {
+    max-width: 100%;
+    gap: 15px;
+  }
+
+  .dropdown-header {
+    padding: 8px;
+  }
+
+  .dropdown-header span {
+    font-size: 14px;
+  }
+
+  .dropdown-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dropdown-item {
+    padding: 8px;
+  }
 }
 
 @media (max-width: 480px) {
   .input-sections {
     padding: 10px;
-    width: 100%; 
+    width: 100%;
   }
+
   .hamburger {
     width: 25px;
     height: 18px;
@@ -381,5 +572,19 @@ input:focus {
 
   .sidebar-logout h4 {
     font-size: 12px;
+  }
+
+  .attendance-title {
+    font-size: 18px;
+  }
+
+  .search-input {
+    font-size: 12px;
+  }
+
+  .search-icon,
+  .network-icon {
+    width: 18px;
+    height: 18px;
   }
 }

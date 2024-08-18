@@ -1,6 +1,9 @@
 import React from "react";
 import profile from "../Assets/Group.svg";
 import Logo from "../Assets/Rectangle 1.svg";
+import MarkAttendance from "./MarkAttendance"
+
+
 function Navbar() {
  
   return (
@@ -18,8 +21,7 @@ function Navbar() {
           </div>
         </nav>
       </div>
-      <div>
-      </div>
+      <MarkAttendance/>
     </div>
   );
 }
