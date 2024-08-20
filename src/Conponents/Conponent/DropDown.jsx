@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ArrowDown from "../Assets/Vector.svg";
+import ArrowDown from "../Assets/Vector1.svg";
 
 function DropDown() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -23,7 +23,7 @@ function DropDown() {
   };
 
   const dropdownOptions = {
-    dropdown1: ["Date 1", "Date 2", "Date 3", "Date 4"],
+    dropdown1: [],
     dropdown2: ["Cyber Security", "Data Analysis", "Frontend Development", "Backend Development","Mobile Development","UIUX Design"],
     dropdown3: ["Cohort 1", "Cohort 2", "Cohort 3", "Cohort 4","Cohort 5","Cohort 6"],
     dropdown4: ["Mark all as present", "Mark all as Absent", "Mark all as left"],

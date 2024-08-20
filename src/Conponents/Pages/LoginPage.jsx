@@ -1,11 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import Logo from "../Assets/Rectangle 1.svg";
 import MailLogo from "../Assets/Vector.svg";
 import PasswordLogo from "../Assets/Vector (1).svg";
 import LoginBk from "../Assets/Rectangle 2.svg";
 
-
 function LoginPage() {
+  const navigate = useNavigate(); // Create a navigate function
+
+  const handleTutorLogin = () => {
+    navigate("/home"); // Navigate to the homepage
+  };
+
   return (
     <div className="login-page">
       <div className="input-sections">
@@ -21,7 +27,9 @@ function LoginPage() {
             <input type="password" name="password" placeholder="Password" />
           </div>
         </form>
-        <button className="button button-tutor">Log In As Tutor</button>
+        <button className="button button-tutor" onClick={handleTutorLogin}>
+          Log In As Tutor
+        </button>
         <button className="button button-admin">Log In As Super Admin</button>
       </div>
       <img src={LoginBk} alt="" className="login-bk" />

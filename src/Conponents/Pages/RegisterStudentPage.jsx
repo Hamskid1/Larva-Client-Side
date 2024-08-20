@@ -1,14 +1,15 @@
 import React from "react";
+import Aside from "../Conponent/Aside";
 import profile from "../Assets/Group.svg";
 import Logo from "../Assets/Rectangle 1.svg";
-import MarkAttendance from "./MarkAttendance"
-import StudentCard from "./StudentCard";
+import RegisterPage from "../Conponent/RegisterPage";
+import ArrowDown from "../Assets/Vector1.svg";
 
-
-function Navbar() {
- 
+function RegisterStudentPage() {
   return (
-    <div className="Navbars">
+    <div>
+      <Aside />
+      <div className="Navbars">
       <div className={`navbar-container`}>
         <img src={Logo} alt="Logo" className="navbar-logo" />
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,10 +23,10 @@ function Navbar() {
           </div>
         </nav>
       </div>
-      <MarkAttendance/>
-      <StudentCard/>
+        <RegisterPage/>
+      </div>
     </div>
   );
 }
 
-export default Navbar;
+export default RegisterStudentPage;

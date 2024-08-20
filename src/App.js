@@ -1,6 +1,28 @@
-import React from 'react'
+import React from "react";
 import "./App.css"
-import HomePage from './Conponents/Pages/HomePage.jsx'
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LoginPage from "./Conponents/Pages/LoginPage.jsx";
+import HomePage from "./Conponents/Pages/HomePage.jsx";
+import RegisterStudentPage from "./Conponents/Pages/RegisterStudentPage.jsx";
+import StudentListPage from "./Conponents/Pages/StudentListPage.jsx";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/register-students" element={<RegisterStudentPage />} />
+        <Route path="/student-list" element={<StudentListPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+// import React from 'react'
+// import "./App.css"
 // import LoginPage from "./Conponents/Pages/LoginPage.jsx"
 
 
@@ -8,14 +30,13 @@ import HomePage from './Conponents/Pages/HomePage.jsx'
 
 
 
-function App() {
-  return (
-    <div>
-      {/* <LoginPage /> */}
-      <HomePage/>
-    </div>
-  )
-}
+// function App() {
+//   return (
+//     <div>
+//       <LoginPage />
+//     </div>
+//   )
+// }
 
 
-export default App
+// export default App
