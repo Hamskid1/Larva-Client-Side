@@ -391,6 +391,19 @@ input:focus {
   background-color: #f0f0f0;
 }
 
+
+/* Ensuring DatePicker fits within Dropdown */
+.dropdown-container .react-datepicker {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: auto; /* Allows flexibility for fitting */
+  min-width: 100%; /* Ensures it doesn't shrink smaller than the dropdown */
+  max-width: 350px; /* Set a max width for larger screens */
+  z-index: 1000;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

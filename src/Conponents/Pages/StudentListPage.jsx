@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Aside from "../Conponent/Aside";
 import profile from "../Assets/Group.svg";
 import Logo from "../Assets/Rectangle 1.svg";
 import ArrowDown from "../Assets/Vector1.svg";
 import "./StudentListPage.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 function StudentListPage() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -12,6 +14,9 @@ function StudentListPage() {
     dropdown2: "Select Course",
     dropdown3: "Select Cohort",
   });
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = (dropdown) => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
@@ -25,15 +30,23 @@ function StudentListPage() {
     setOpenDropdown(null);
   };
 
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    setSelectedOptions((prev) => ({
+      ...prev,
+      dropdown1: date ? date.toLocaleDateString() : "Date Selector",
+    }));
+    setOpenDropdown(null);
+  };
+
   const dropdownOptions = {
-    dropdown1: [],
     dropdown2: [
       "Cyber Security",
       "Data Analysis",
       "Frontend Development",
       "Backend Development",
       "Mobile Development",
-      "UIUX Design",
+      "UI/UX Design",
     ],
     dropdown3: [
       "Cohort 1",
@@ -45,6 +58,18 @@ function StudentListPage() {
     ],
   };
 
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setOpenDropdown(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="Navbars">
       <Aside />
@@ -62,8 +87,32 @@ function StudentListPage() {
             </div>
           </nav>
         </div>
-        <div className="dropdown-group ">
-          {["dropdown1", "dropdown2", "dropdown3"].map((dropdown, index) => (
+
+        <div className="dropdown" ref={dropdownRef}>
+          <div className="dropdown-container">
+            <div
+              className="dropdown-header"
+              onClick={() => toggleDropdown("dropdown1")}
+            >
+              <span>{selectedOptions.dropdown1}</span>
+              <span
+                className={`dropdown-arrow ${
+                  openDropdown === "dropdown1" ? "open" : ""
+                }`}
+              >
+                <img src={ArrowDown} alt="Icon" className="dropdown-icon" />
+              </span>
+            </div>
+            {openDropdown === "dropdown1" && (
+              <DatePicker
+                selected={selectedDate}
+                onChange={handleDateChange}
+                inline
+              />
+            )}
+          </div>
+
+          {["dropdown2", "dropdown3"].map((dropdown, index) => (
             <div key={index} className="dropdown-container">
               <div
                 className="dropdown-header"
@@ -93,17 +142,6 @@ function StudentListPage() {
               )}
             </div>
           ))}
-        </div>
-      </div>
-      <div>
-        <div>
-            <h1></h1>
-        </div>
-        <div>
-            <h1></h1>
-        </div>
-        <div>
-            <h1></h1>
         </div>
       </div>
     </div>

@@ -3,7 +3,6 @@ import Aside from "../Conponent/Aside";
 import profile from "../Assets/Group.svg";
 import Logo from "../Assets/Rectangle 1.svg";
 import RegisterPage from "../Conponent/RegisterPage";
-import ArrowDown from "../Assets/Vector1.svg";
 
 function RegisterStudentPage() {
   return (

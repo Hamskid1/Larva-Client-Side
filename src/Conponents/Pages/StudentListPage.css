@@ -1,3 +1,95 @@
-.dropdown-group {
-    margin-top:10%;
+.dropdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(246px, 1fr));
+    gap: 35px;
+    max-width: 100%;
+    margin-top: 10%;
+    margin-left: -10%;
+}
+
+
+/* Dropdown Container */
+.dropdown-container {
+    position: relative;
+}
+
+/* Dropdown Header */
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Selected Option Text */
+.dropdown-header span {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Icon Styling */
+.dropdown-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Arrow Rotation */
+.dropdown-arrow.open .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* Dropdown List */
+.dropdown-list {
+    list-style: none;
+    margin-top: 5px;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown List Item */
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Ensuring DatePicker fits within Dropdown */
+.dropdown-container .react-datepicker {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: auto;
+    min-width: 100%;
+    max-width: 350px;
+    z-index: 1000;
+}
+
+@media (max-width:760px) {
+
+    .dropdown {
+        display: grid;
+        gap: 20px;
+        max-width:65%;
+        margin-top: 28%;
+        margin-left: 18%;
+    }
+
 }
