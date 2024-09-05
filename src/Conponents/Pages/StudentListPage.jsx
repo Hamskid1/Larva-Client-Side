@@ -6,6 +6,8 @@ import ArrowDown from "../Assets/Vector1.svg";
 import "./StudentListPage.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Net from "../Assets/Vector (5).svg";
+import Search from "../Assets/Vector (4).svg";
 
 function StudentListPage() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -86,6 +88,24 @@ function StudentListPage() {
               <img src={profile} alt="Profile" className="profile-img" />
             </div>
           </nav>
+        </div>
+
+        <div className="attendance-container attendance">
+          <div className="attendance-header">
+            <h1 className="attendance-title">Mark Attendance</h1>
+            <div className="attendance-controls">
+              <form className="attendance-form" action="">
+                <img src={Search} alt="Search Icon" className="search-icon" />
+                <input
+                  type="search"
+                  name="search"
+                  className="search-input"
+                  placeholder="Search student..."
+                />
+              </form>
+              <img src={Net} alt="Network Icon" className="network-icon" />
+            </div>
+          </div>
         </div>
 
         <div className="dropdown" ref={dropdownRef}>

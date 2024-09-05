@@ -1,0 +1,125 @@
+.settings-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  /* background-color: #f9f9f9; */
+  border-radius: 10px;
+  width: 100%;
+}
+
+.settings-list {
+  width: 30%;
+}
+
+.settings-options {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings-item:hover {
+  background-color: #e0f7fa;
+  border-right: 1px solid #fb8c00;
+}
+
+.settings-button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.settings-content {
+  width: 100%;
+}
+
+.change-password-container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+}
+
+.profile-image {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-field {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.input-field:focus {
+  border-color: #fb8c00;
+  outline: none;
+  box-shadow: 0 0 5px #fb8a0083;
+}
+
+.save-button {
+  padding: 10px;
+  background-color: #fb8c00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.save-button:hover {
+  background-color: #fb8a00dc;
+}
+
+
+/* for responsiveness */
+@media (max-width: 768px) {
+  .settings-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .settings-list{
+    display:flex;
+    width:100%;
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
+  .change-password-container{
+    width: 100%;
+  }
+
+}

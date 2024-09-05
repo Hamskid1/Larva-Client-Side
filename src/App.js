@@ -5,6 +5,7 @@ import LoginPage from "./Conponents/Pages/LoginPage.jsx";
 import HomePage from "./Conponents/Pages/HomePage.jsx";
 import RegisterStudentPage from "./Conponents/Pages/RegisterStudentPage.jsx";
 import StudentListPage from "./Conponents/Pages/StudentListPage.jsx";
+import SettingPage from "./Conponents/Pages/SettingPage.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/register-students" element={<RegisterStudentPage />} />
         <Route path="/student-list" element={<StudentListPage />} />
+        <Route path="/settings" element={<SettingPage />} />
       </Routes>
     </Router>
   );

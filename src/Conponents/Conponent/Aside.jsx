@@ -28,6 +28,10 @@ function Aside() {
     navigate("/student-list"); 
   };
 
+  const handleSettingPage = () => {
+    navigate("/settings"); 
+  };
+
   return (
     <div className="aside">
       <div className={`hamburger ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
@@ -49,7 +53,7 @@ function Aside() {
           <p onClick={handleBackToHomePage}>Mark Attendance</p>
           <p onClick={handleRegisterStudents}>Register Students</p>
           <p onClick={handleStudentList}>Students List</p>
-          <p>Settings</p>
+          <p onClick={handleSettingPage}>Settings</p>
         </nav>
         <div className="sidebar-logout" onClick={handleLogout}>
           <img src={LogImg} alt="Logout Icon" />

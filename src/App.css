@@ -199,8 +199,6 @@ input:focus {
   display: none;
 }
 
-
-
 /* General Styles for nav */
 
 .Navbars {
@@ -265,6 +263,7 @@ input:focus {
 /* Container Styling */
 .attendance-container {
   padding: 20px;
+  margin-top: 5%;
 }
 
 /* Header Styling */
@@ -486,6 +485,19 @@ input:focus {
   background-color: #fb8c00;
 }
 
+.settingTitle {
+  font-size: 28px;      
+  color: #333333;      
+  font-weight: bold;    
+  text-align: center;   
+  margin-top: 9%; 
+  width:100%;
+  height: 50px;
+  background: #dedede20;
+  border-bottom: 1px solid rgba(68, 64, 64, 0.131);
+}
+
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .login-page {
@@ -635,6 +647,10 @@ input:focus {
 
   .dropdown-item {
     padding: 8px;
+  }
+
+  .settingTitle{
+    margin-top: 30%;
   }
 }
 

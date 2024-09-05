@@ -3,7 +3,6 @@
     grid-template-columns: repeat(auto-fit, minmax(246px, 1fr));
     gap: 35px;
     max-width: 100%;
-    margin-top: 10%;
     margin-left: -10%;
 }
 
@@ -82,14 +81,25 @@
     z-index: 1000;
 }
 
+.attendance{
+    margin-top: 7%;
+    margin-left: -18%;
+}
+
 @media (max-width:760px) {
 
     .dropdown {
         display: grid;
         gap: 20px;
         max-width:65%;
-        margin-top: 28%;
         margin-left: 18%;
     }
+
+    .attendance{
+        margin-top: 10%;
+        margin-left: 5%;
+    }
+
+    
 
 }
