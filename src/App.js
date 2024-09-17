@@ -6,6 +6,7 @@ import HomePage from "./Conponents/Pages/HomePage.jsx";
 import RegisterStudentPage from "./Conponents/Pages/RegisterStudentPage.jsx";
 import StudentListPage from "./Conponents/Pages/StudentListPage.jsx";
 import SettingPage from "./Conponents/Pages/SettingPage.jsx";
+import SuperAdminPage from "./Conponents/Pages/SuperAdminPage.jsx"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/register-students" element={<RegisterStudentPage />} />
         <Route path="/student-list" element={<StudentListPage />} />
         <Route path="/settings" element={<SettingPage />} />
+        <Route path="/super-admin" element={<SuperAdminPage />} />
       </Routes>
     </Router>
   );

@@ -11,6 +11,10 @@ function LoginPage() {
   const handleTutorLogin = () => {
     navigate("/home"); // Navigate to the homepage
   };
+  
+  const handleSuperAdminLogin = () => {
+    navigate("/super-admin"); // Navigate to the homepage
+  };
 
   return (
     <div className="login-page">
@@ -30,7 +34,7 @@ function LoginPage() {
         <button className="button button-tutor" onClick={handleTutorLogin}>
           Log In As Tutor
         </button>
-        <button className="button button-admin">Log In As Super Admin</button>
+        <button className="button button-admin" onClick={handleSuperAdminLogin} >Log In As Super Admin</button>
       </div>
       <img src={LoginBk} alt="" className="login-bk" />
     </div>
